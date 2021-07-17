@@ -1,0 +1,21 @@
+<div class="input-group">
+  
+  <input class="center-block " type="text" placeholder="Seach Here..."
+    (input)="loadfilterMovie($event.target.value)">
+    <select name="type"  (change)="onChange('type',$event.target.value)">
+      <option *ngFor="let type of searchType"  [value]="type.id">{{type.name}}</option>
+      </select>
+</div>
+
+<div class="cards-container">
+  <div class="card col-md-3" style="width: 18rem;" *ngFor="let item of seriesList">
+    <img
+      src="{{item.Poster}}"
+      class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Title: {{item.Title}}</p>
+      <p class="card-text">Year: {{item.Year}}</p>
+
+    </div>
+  </div>
+</div>
